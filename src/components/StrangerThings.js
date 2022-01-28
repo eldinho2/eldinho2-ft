@@ -38,6 +38,7 @@ class StrangerThings extends React.Component {
 
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
+    this.renderServerEnv = this.renderServerEnv(this);
   }
 
   handleInput(event) {
@@ -113,6 +114,7 @@ class StrangerThings extends React.Component {
           hereIsTheUpsideDownWorld,
         )}` }
       >
+        { REACT_APP_SERVER_ENV === 'dev' ? this.renderServerEnv : null }
         <div className="content strangerfy">
           <div className="change-reality">
             <button type="button" onClick={ this.changeRealityClick }>
